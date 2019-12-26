@@ -21,12 +21,12 @@ class DetailHero : AppCompatActivity() {
         val tvDetail: TextView = findViewById(R.id.tv_item_detail)
 
         val tName = intent.getStringExtra(EXTRA_NAME)
-        val tImg = intent.getStringExtra(EXTRA_PHOTO)
+        //val tImg = intent.getStringExtra(EXTRA_PHOTO)
         val tDetail = intent.getStringExtra(EXTRA_DETAIL)
 
         tvName.text = tName
         Glide.with(this)
-            .load(tImg)
+            .load(getIntent().getIntExtra(EXTRA_PHOTO,0))
             .apply(RequestOptions())
             .into(imgPhoto)
         tvDetail.text = tDetail
